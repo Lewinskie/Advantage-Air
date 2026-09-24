@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-rust: #871B1A;
+  --color-rust-dark: #6a1514;
+  --color-rust-light: #a82221;
+  --color-gold: #D9AD27;
+  --color-gold-dark: #b8921f;
+  --color-gold-light: #e8c23a;
+  --color-ink: #231F20;
+  --color-ink-90: rgba(35,31,32,0.9);
+  --color-grey: #7C7C7C;
+  --color-grey-light: #a8a8a8;
+  --color-off-white: #F5F3EF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background-color: #231F20;
+  color: #F5F3EF;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.font-display {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.font-mono-data {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #231F20; }
+::-webkit-scrollbar-thumb { background: #871B1A; }
+
+/* Gold rule */
+.gold-rule {
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: #D9AD27;
+}
+
+/* Nav link hover */
+.nav-link {
+  position: relative;
+  letter-spacing: 0.08em;
+  transition: color 0.2s;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #D9AD27;
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after { width: 100%; }
+.nav-link:hover { color: #D9AD27; }
+
+/* Stat counter */
+.stat-value {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #D9AD27;
+  line-height: 1;
+}
+
+/* Section label */
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #D9AD27;
+}
+
+/* Fleet card */
+.fleet-card {
+  position: relative;
+  overflow: hidden;
+  background: #2e2a2b;
+  border: 1px solid rgba(217,173,39,0.15);
+  transition: border-color 0.3s, transform 0.3s;
+}
+.fleet-card:hover {
+  border-color: rgba(217,173,39,0.5);
+  transform: translateY(-4px);
+}
+.fleet-card img {
+  transition: transform 0.5s ease;
+}
+.fleet-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Service item */
+.service-item {
+  border-top: 1px solid rgba(217,173,39,0.2);
+  transition: background 0.2s;
+}
+.service-item:hover {
+  background: rgba(135,27,26,0.15);
+}
+
+/* CTA button */
+.btn-primary {
+  background: #871B1A;
+  color: #F5F3EF;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border: 1px solid #871B1A;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background: transparent;
+  color: #871B1A;
+  border-color: #871B1A;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #D9AD27;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border: 1px solid #D9AD27;
+  transition: background 0.25s, color 0.25s;
+  cursor: pointer;
+}
+.btn-outline:hover {
+  background: #D9AD27;
+  color: #231F20;
+}
+
+/* Hero overlay */
+.hero-overlay {
+  background: linear-gradient(
+    to right,
+    rgba(35,31,32,0.92) 0%,
+    rgba(35,31,32,0.7) 50%,
+    rgba(35,31,32,0.2) 100%
+  );
+}
+
+@media (max-width: 1000px) {
+  .hero-overlay {
+    background: rgba(35,31,32,0.8);
+  }
+}

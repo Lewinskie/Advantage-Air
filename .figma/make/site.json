@@ -1,0 +1,10 @@
+{
+  "description": "Offers a sleek, responsive aviation website template with custom colors for travel companies to showcase services and enhance online presence.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
