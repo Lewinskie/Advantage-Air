@@ -19,7 +19,7 @@ export function Services() {
           </div>
           <div className="md:col-span-2 flex items-center">
             <p className="text-[#7C7C7C] leading-relaxed">
-              From scheduled passenger routes to urgent aeromedical evacuations,
+              From scheduled cargo hauls to urgent aeromedical evacuations,
               Advantage Air Travel provides the complete range of aviation
               services under a single, trusted operator certificate.
             </p>

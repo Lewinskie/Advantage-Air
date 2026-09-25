@@ -14,15 +14,17 @@ export function About() {
           </h2>
           <span className="gold-rule mb-6" />
           <p className="text-[#a8a8a8] leading-relaxed mb-5">
-            For over two decades, Advantage Air Travel has been the carrier of
-            choice for governments, corporations, and individual travellers who
-            demand precision, safety, and service excellence across the African
-            continent and beyond.
+            Advantage Air travel Limited is an aviation company specializing in
+            the provision of cargo freight services in East Africa, the horn of
+            Africa and regionally in the continent. The company is based in
+            Nairobi, Kenya operating out of both Wilson Airport and Jomo
+            Kenyatta International Airport.
           </p>
           <p className="text-[#a8a8a8] leading-relaxed mb-8">
-            Headquartered in Johannesburg with regional hubs in Nairobi, Lagos,
-            and Dubai, we operate scheduled services, bespoke charters, critical
-            cargo lifts, and aeromedical evacuations — all under one roof.
+            Advantage Air aims to provide safe, dependable and cost effective
+            air transport solutions to diversity of clients and partners.
+            Advantage Air has an aircraft fleet of Four(4) Fokker 50 Freighters
+            and One(1) CRJ-200 Freighter.
           </p>
           <ul className="flex flex-col gap-3">
             {[

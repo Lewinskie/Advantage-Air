@@ -180,15 +180,15 @@ export const STATS = [
 
 export const FLEET = [
   {
-    name: "Boeing 737-800",
+    name: "Fokker 50 Freighter",
     category: "Scheduled & Charter",
     capacity: "189 PAX / 20T cargo",
     range: "5,765 km",
     img: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=800&h=500&fit=crop&auto=format",
-    alt: "Boeing 737-800 on tarmac",
+    alt: "Fokker 50 on tarmac",
   },
   {
-    name: "ATR 72-600",
+    name: "ATR 72-400 Freighter",
     category: "Regional Routes",
     capacity: "70 PAX / 7.5T cargo",
     range: "1,528 km",
@@ -196,7 +196,7 @@ export const FLEET = [
     alt: "Regional turboprop in flight",
   },
   {
-    name: "Cessna Citation X",
+    name: "CRJ-200 Freighter",
     category: "Executive Charter",
     capacity: "12 PAX",
     range: "6,297 km",
@@ -206,55 +206,55 @@ export const FLEET = [
 ];
 
 export const SERVICES = [
+  // {
+  //   num: "01",
+  //   title: "Scheduled Passenger",
+  //   desc: "Reliable domestic and regional routes operating on fixed timetables across key hubs.",
+  // },
+  // {
+  //   num: "02",
+  //   title: "Executive Charter",
+  //   desc: "On-demand private and group charters for corporate clients, sports teams, and VIPs.",
+  // },
   {
     num: "01",
-    title: "Scheduled Passenger",
-    desc: "Reliable domestic and regional routes operating on fixed timetables across key hubs.",
-  },
-  {
-    num: "02",
-    title: "Executive Charter",
-    desc: "On-demand private and group charters for corporate clients, sports teams, and VIPs.",
-  },
-  {
-    num: "03",
     title: "Air Cargo & Freight",
     desc: "Time-critical freight, perishables, pharmaceuticals, and mining logistics.",
   },
   {
-    num: "04",
+    num: "02",
     title: "Medical Evacuation",
     desc: "Rapid-response aeromedical transport with certified medical crew and equipment.",
   },
   {
-    num: "05",
+    num: "03",
     title: "Government & Defence",
     desc: "Dedicated air support for governmental agencies and peacekeeping operations.",
   },
-  {
-    num: "06",
-    title: "Fuel Stop Services",
-    desc: "Technical stops, ground handling, and fuel services at partner airfields.",
-  },
+  // {
+  //   num: "04",
+  //   title: "Fuel Stop Services",
+  //   desc: "Technical stops, ground handling, and fuel services at partner airfields.",
+  // },
 ];
 
 export const DESTINATIONS = [
-  "Johannesburg",
-  "Cape Town",
+  "Somalia",
+  "South Sudan",
   "Nairobi",
-  "Lagos",
-  "Accra",
-  "Dar es Salaam",
-  "Addis Ababa",
-  "Lusaka",
-  "Harare",
-  "Maputo",
-  "Kinshasa",
-  "Douala",
-  "Abidjan",
-  "Dakar",
-  "Dubai",
-  "Mauritius",
-  "Seychelles",
-  "Réunion",
+  "Libya",
+  "Juba",
+  "Mogadishu",
+  // "Addis Ababa",
+  // "Lusaka",
+  // "Harare",
+  // "Maputo",
+  // "Kinshasa",
+  // "Douala",
+  // "Abidjan",
+  // "Dakar",
+  // "Dubai",
+  // "Mauritius",
+  // "Seychelles",
+  // "Réunion",
 ];

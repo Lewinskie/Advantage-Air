@@ -13,6 +13,7 @@ import { Gallery } from "./components/sections/Gallery";
 import { Hero } from "./components/sections/Hero";
 import { Services } from "./components/sections/Services";
 import { Stats } from "./components/sections/Stats";
+import { VisionMission } from "./components/sections/VisionMission";
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,6 +31,7 @@ export default function App() {
       <Hero />
       <CeoMessage />
       <About />
+      <VisionMission />
       <Stats />
       <Fleet />
       <Services />

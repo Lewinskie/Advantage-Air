@@ -20,10 +20,10 @@ export function Fleet() {
               Aircraft for Every Mission
             </h2>
           </div>
-          <p className="text-[#7C7C7C] text-sm max-w-xs md:text-right">
+          {/* <p className="text-[#7C7C7C] text-sm max-w-xs md:text-right">
             A versatile fleet ranging from 12-seat executive jets to 189-seat
             airliners.
-          </p>
+          </p> */}
         </div>
         <div className="flex gap-0 mb-8 border-b border-[rgba(217,173,39,0.15)]">
           {FLEET.map((f, i) => (

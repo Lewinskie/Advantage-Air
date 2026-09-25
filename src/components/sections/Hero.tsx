@@ -22,8 +22,12 @@ export function Hero() {
       />
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-32 pb-20">
         <div className="max-w-3xl">
-          <span className="section-label mb-6 block">
-            Est. 1996 &nbsp;—&nbsp; Licensed Air Carrier
+          <span className="section-label mb-6 flex justify-center">
+            <img
+              src="/images/logo.png"
+              alt="Advantage Air Travel Logo"
+              className="block w-40 md:w-52 h-auto object-contain"
+            />
           </span>
           <h1
             className="font-display font-900 uppercase leading-[0.9] mb-6"
@@ -34,10 +38,9 @@ export function Hero() {
             <span style={{ color: "#871B1A" }}>Our</span>{" "}
             <span style={{ color: "#D9AD27" }}>Command.</span>
           </h1>
-          <p className="text-[#a8a8a8] text-lg leading-relaxed max-w-xl mb-10">
-            Advantage Air Travel connects passengers, cargo, and charter clients
-            across 120+ destinations with unmatched reliability, precision, and
-            care.
+          <p className="text-[#a8a8a8] text-lg leading-relaxed max-w-xl mb-10 ">
+            We provide Air Cargo services to Kenya, Somalia,
+            South-Sudan,Ethiopia, East & Central Africa
           </p>
           <div className="flex flex-wrap gap-4">
             <a href="#services" className="btn-primary text-sm">

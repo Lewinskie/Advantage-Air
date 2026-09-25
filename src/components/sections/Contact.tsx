@@ -39,7 +39,7 @@ export function Contact() {
             {[
               {
                 label: "Head Office",
-                text: "15 Aviation Boulevard, OR Tambo\nJohannesburg, 1627, South Africa",
+                text: "Titan Hanger, 3rd floor, Wilson Airport\nNairobi, P.O BOX 3753-0056, Kenya",
               },
               {
                 label: "Nairobi Hub",

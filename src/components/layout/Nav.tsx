@@ -16,12 +16,20 @@ export function Nav({ scrolled }: { scrolled: boolean }) {
     >
       <nav className="flex items-center justify-between px-6 md:px-12 py-4">
         <a href="#" className="flex flex-col leading-none">
-          <span className="font-display font-900 text-[1.6rem] tracking-tight text-[#F5F3EF] uppercase leading-none">
+          {/* <span className="font-display font-900 text-[1.6rem] tracking-tight text-[#F5F3EF] uppercase leading-none">
             Advantage
           </span>
           <span className="font-display font-300 text-[0.85rem] tracking-[0.35em] text-[#D9AD27] uppercase">
             Air Travel
-          </span>
+          </span> */}
+          <img
+            src="/images/logo.png"
+            alt="Advantage Air Travel Logo"
+            className="block w-22 md:w-30 h-auto object-contain"
+          />
+        </a>
+        <a href="#contact" className="md:hidden btn-primary text-sm">
+          Book Charter
         </a>
         <ul className="hidden md:flex items-center gap-8">
           {NAV_ITEMS.map((item) => (
