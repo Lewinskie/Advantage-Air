@@ -156,7 +156,6 @@ export const GALLERY_CATEGORIES = [
   "Cargo Ops",
   "Medical Evacuation",
   "Fleet",
-  // "Passenger Ops",
   "Maintenance",
   "Charter Ops",
   "Humanitarian Ops",
@@ -195,14 +194,6 @@ export const FLEET = [
     img: "/images/5Y-DDI.jpg",
     alt: "ATR 72-400 parked at airport",
   },
-  // {
-  //   name: "CRJ-200 Freighter",
-  //   category: "CRJ-200 Charter",
-  //   capacity: "12 PAX",
-  //   range: "6,297 km",
-  //   img: "/images/WhatsApp-Image-2022-01-18-at-14.02.10-3.jpeg",
-  //   alt: "CRJ-200 taxiing on runway",
-  // },
 ];
 
 export const SERVICES = [
@@ -231,15 +222,4 @@ export const DESTINATIONS = [
   "Juba",
   "Mogadishu",
   "Ethiopia",
-  // "Lusaka",
-  // "Harare",
-  // "Maputo",
-  // "Kinshasa",
-  // "Douala",
-  // "Abidjan",
-  // "Dakar",
-  // "Dubai",
-  // "Mauritius",
-  // "Seychelles",
-  // "Réunion",
 ];
