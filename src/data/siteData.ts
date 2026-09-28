@@ -19,19 +19,19 @@ export interface GalleryPhoto {
 export const DEFAULT_JOBS: Job[] = [
   {
     id: "1",
-    title: "First Officer – Boeing 737",
+    title: "First Officer – Fokker 50 / ATR 72",
     department: "Flight Operations",
-    location: "Johannesburg, South Africa",
+    location: "Wilson Airport, Nairobi, Kenya",
     type: "Full-Time",
     closing: "2026-10-31",
     description:
-      "Join our growing fleet as a First Officer on the Boeing 737-800. You will operate scheduled and charter flights across our African network under the command of experienced Captains.",
+      "Join our growing fleet as a First Officer on the Fokker 50 or ATR 72. You will operate scheduled and charter flights across our African network under the command of experienced Captains.",
     requirements: [
       "ATPL(A) or CPL(A) with frozen ATPL",
-      "B737 type rating preferred",
+      "Fokker 50 or ATR 72 type rating preferred",
       "Minimum 1,500 total flight hours",
       "Valid Class 1 Medical",
-      "SACAA or EASA licensed",
+      "EASA licensed",
     ],
   },
   {
@@ -54,7 +54,7 @@ export const DEFAULT_JOBS: Job[] = [
     id: "3",
     title: "Cargo Sales Executive",
     department: "Commercial",
-    location: "Lagos, Nigeria",
+    location: "Wilson Airport, Nairobi, Kenya",
     type: "Full-Time",
     closing: "2026-11-07",
     description:
@@ -70,7 +70,7 @@ export const DEFAULT_JOBS: Job[] = [
     id: "4",
     title: "Aircraft Maintenance Engineer – Avionics",
     department: "Maintenance & Engineering",
-    location: "Johannesburg, South Africa",
+    location: "Wilson Airport, Nairobi, Kenya",
     type: "Full-Time",
     closing: "2026-11-21",
     description:
@@ -86,7 +86,7 @@ export const DEFAULT_JOBS: Job[] = [
     id: "5",
     title: "Charter Operations Coordinator",
     department: "Charter & Special Missions",
-    location: "Dubai, UAE",
+    location: "Wilson Aiport, Nairobi, Kenya",
     type: "Full-Time",
     closing: "2026-10-25",
     description:
@@ -103,33 +103,33 @@ export const DEFAULT_JOBS: Job[] = [
 export const DEFAULT_PHOTOS: GalleryPhoto[] = [
   {
     id: "1",
-    url: "https://images.unsplash.com/photo-1789465779021-63ec9ae47c1c?w=800&h=600&fit=crop&auto=format",
-    caption: "Cargo loading operations at OR Tambo International",
+    url: "/images/WhatsApp-Image-2022-01-19-at-11.54.28-10.jpeg",
+    caption: "Cargo loading operations at Juba",
     category: "Cargo Ops",
   },
   {
     id: "2",
-    url: "https://images.unsplash.com/photo-1765036715749-370723d4c444?w=800&h=600&fit=crop&auto=format",
+    url: "/images/WhatsApp-Image-2022-01-19-at-17.49.09-1.jpeg",
     caption: "Ground crew aircraft push-back, Nairobi hub",
-    category: "Ground Ops",
+    category: "Charter Ops",
   },
   {
     id: "3",
-    url: "https://images.unsplash.com/photo-1761398352790-fa2278c2e1e9?w=800&h=600&fit=crop&auto=format",
-    caption: "Night turnaround operations",
-    category: "Night Ops",
+    url: "/images/WhatsApp-Image-2022-01-19-at-11.54.28-12.jpeg",
+    caption: "Cargo loading operations at Mogadishu",
+    category: "Cargo Ops",
   },
   {
     id: "4",
-    url: "https://images.unsplash.com/photo-1708246519742-2906e0dc7900?w=800&h=600&fit=crop&auto=format",
-    caption: "AAT Boeing 737 departing Johannesburg",
+    url: "/images/WhatsApp-Image-2022-01-19-at-11.54.28-9.jpeg",
+    caption: "Fokker 50 freighter on tarmac, Nairobi hub",
     category: "Fleet",
   },
   {
     id: "5",
-    url: "https://images.unsplash.com/photo-1751698096512-6fad7437c09e?w=800&h=600&fit=crop&auto=format",
-    caption: "Sunset boarding, Cape Town route",
-    category: "Passenger Ops",
+    url: "/images/WhatsApp-Image-2022-01-18-at-14.02.10-3.jpeg",
+    caption: "Fokker 50 Freighter on tarmac, Nairobi hub",
+    category: "Fleet",
   },
   {
     id: "6",
@@ -139,27 +139,27 @@ export const DEFAULT_PHOTOS: GalleryPhoto[] = [
   },
   {
     id: "7",
-    url: "https://images.unsplash.com/photo-1766224241911-c46fb97633d6?w=800&h=600&fit=crop&auto=format",
-    caption: "Boarding stairs rigged for charter departure",
-    category: "Charter Ops",
+    url: "/images/5Y-DDI-Humanitarian-work-Deeq-Raashin-Dhuusamareeb-170222-0.jpg",
+    caption: "Humanitarian relief flight, Dhuusamareeb, Somalia",
+    category: "Humanitarian Ops",
   },
   {
     id: "8",
-    url: "https://images.unsplash.com/photo-1776160079949-3c30d7c3b8a5?w=800&h=600&fit=crop&auto=format",
-    caption: "Gate turnaround — Lagos International",
-    category: "Ground Ops",
+    url: "/images/5Y-DDI-4.jpg",
+    caption: "Humanitarian relief flight, Mogadishu, Somalia",
+    category: "Humanitarian Ops",
   },
 ];
 
 export const GALLERY_CATEGORIES = [
   "All",
   "Cargo Ops",
-  "Ground Ops",
+  "Medical Evacuation",
   "Fleet",
-  "Passenger Ops",
+  // "Passenger Ops",
   "Maintenance",
   "Charter Ops",
-  "Night Ops",
+  "Humanitarian Ops",
 ];
 
 export const NAV_ITEMS = [
@@ -181,41 +181,31 @@ export const STATS = [
 export const FLEET = [
   {
     name: "Fokker 50 Freighter",
-    category: "Scheduled & Charter",
+    category: "Fokker 50 Charter",
     capacity: "189 PAX / 20T cargo",
     range: "5,765 km",
-    img: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=800&h=500&fit=crop&auto=format",
+    img: "/images/2-1.jpg",
     alt: "Fokker 50 on tarmac",
   },
   {
     name: "ATR 72-400 Freighter",
-    category: "Regional Routes",
+    category: "ATR 72-400 Charter",
     capacity: "70 PAX / 7.5T cargo",
     range: "1,528 km",
-    img: "https://images.unsplash.com/photo-1708359606134-3f0d92fd0a4d?w=800&h=500&fit=crop&auto=format",
-    alt: "Regional turboprop in flight",
+    img: "/images/5Y-DDI.jpg",
+    alt: "ATR 72-400 parked at airport",
   },
-  {
-    name: "CRJ-200 Freighter",
-    category: "Executive Charter",
-    capacity: "12 PAX",
-    range: "6,297 km",
-    img: "https://images.unsplash.com/photo-1768346564233-d71f37bd19b6?w=800&h=500&fit=crop&auto=format",
-    alt: "Luxury private jet interior",
-  },
+  // {
+  //   name: "CRJ-200 Freighter",
+  //   category: "CRJ-200 Charter",
+  //   capacity: "12 PAX",
+  //   range: "6,297 km",
+  //   img: "/images/WhatsApp-Image-2022-01-18-at-14.02.10-3.jpeg",
+  //   alt: "CRJ-200 taxiing on runway",
+  // },
 ];
 
 export const SERVICES = [
-  // {
-  //   num: "01",
-  //   title: "Scheduled Passenger",
-  //   desc: "Reliable domestic and regional routes operating on fixed timetables across key hubs.",
-  // },
-  // {
-  //   num: "02",
-  //   title: "Executive Charter",
-  //   desc: "On-demand private and group charters for corporate clients, sports teams, and VIPs.",
-  // },
   {
     num: "01",
     title: "Air Cargo & Freight",
@@ -231,11 +221,6 @@ export const SERVICES = [
     title: "Government & Defence",
     desc: "Dedicated air support for governmental agencies and peacekeeping operations.",
   },
-  // {
-  //   num: "04",
-  //   title: "Fuel Stop Services",
-  //   desc: "Technical stops, ground handling, and fuel services at partner airfields.",
-  // },
 ];
 
 export const DESTINATIONS = [
@@ -245,7 +230,7 @@ export const DESTINATIONS = [
   "Libya",
   "Juba",
   "Mogadishu",
-  // "Addis Ababa",
+  "Ethiopia",
   // "Lusaka",
   // "Harare",
   // "Maputo",

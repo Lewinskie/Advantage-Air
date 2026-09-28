@@ -26,14 +26,21 @@ export function Footer({
         <div className="md:col-span-1">
           <button
             onClick={handleLogoClick}
-            className="flex flex-col leading-none mb-4 text-left"
+            className="mb-4 flex items-center gap-3 text-left"
           >
-            <div className="font-display font-900 text-[1.3rem] tracking-tight text-[#F5F3EF] uppercase leading-none">
-              Advantage
-            </div>
-            <div className="font-display font-300 text-[0.7rem] tracking-[0.35em] text-[#D9AD27] uppercase">
-              Air Travel
-            </div>
+            <img
+              src="/images/cropped-Favicon-01-01-1.png"
+              alt=""
+              className="h-12 w-12 shrink-0 object-contain"
+            />
+            <span className="flex flex-col leading-none">
+              <span className="font-display text-[1.3rem] font-900 uppercase tracking-tight text-[#F5F3EF]">
+                Advantage
+              </span>
+              <span className="font-display text-[0.7rem] font-300 uppercase tracking-[0.35em] text-[#D9AD27]">
+                Air Travel
+              </span>
+            </span>
           </button>
           <p className="text-[#7C7C7C] text-xs leading-relaxed">
             Africa's trusted air carrier since 1996. Scheduled, charter, cargo,

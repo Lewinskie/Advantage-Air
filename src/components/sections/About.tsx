@@ -31,7 +31,7 @@ export function About() {
               "IATA Certified Operator",
               "ISO 9001:2015 Quality Management",
               "ICAO Safety Compliant",
-              "SACAA Licensed",
+            //   "SACAA Licensed",
             ].map((item) => (
               <li
                 key={item}
@@ -52,7 +52,7 @@ export function About() {
           />
           <div className="absolute bottom-4 right-4 z-20 bg-[#871B1A] px-5 py-3">
             <span className="font-display font-700 text-[2rem] text-[#F5F3EF] leading-none">
-              28+
+              8+
             </span>
             <div className="font-mono-data text-[0.6rem] tracking-widest text-[rgba(245,243,239,0.7)] uppercase">
               Years Experience

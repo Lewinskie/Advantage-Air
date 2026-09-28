@@ -10,11 +10,11 @@ export function CeoMessage() {
             <div className="relative">
               <div className="absolute -top-3 -left-3 w-full h-full border border-[rgba(217,173,39,0.25)]" />
               <img
-                src="https://images.unsplash.com/photo-1569938709389-ff8ab00530b3?w=400&h=500&fit=crop&auto=format&facepad=3&faces=1"
+                src="/images/irene.png"
                 alt="CEO portrait"
                 className="relative z-10 w-56 md:w-full max-w-[260px] object-cover grayscale contrast-110"
                 style={{
-                  filter: "grayscale(100%) contrast(1.1) brightness(0.9)",
+                  filter: "grayscale(10%) contrast(1.1) brightness(0.9)",
                 }}
               />
               <div className="absolute bottom-0 left-0 right-0 z-20 bg-[#871B1A] px-4 py-3">

@@ -17,10 +17,14 @@ import { VisionMission } from "./components/sections/VisionMission";
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const [adminMode, setAdminMode] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 60);
+      setShowScrollTop(window.scrollY > 400);
+    };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -32,11 +36,11 @@ export default function App() {
       <CeoMessage />
       <About />
       <VisionMission />
-      <Stats />
+      {/* <Stats /> */}
       <Fleet />
       <Services />
       <Gallery adminMode={adminMode} />
-      <Destinations />
+      {/* <Destinations /> */}
       <CTA />
       <Careers adminMode={adminMode} />
       <Contact />
@@ -44,6 +48,17 @@ export default function App() {
         adminMode={adminMode}
         onAdminToggle={() => setAdminMode((v) => !v)}
       />
+      {showScrollTop && (
+        <button
+          type="button"
+          aria-label="Scroll to top"
+          title="Scroll to top"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center border border-[#D9AD27] bg-[#231F20] text-2xl leading-none text-[#D9AD27] shadow-lg transition-colors hover:bg-[#D9AD27] hover:text-[#231F20] focus:outline-none focus:ring-2 focus:ring-[#D9AD27] focus:ring-offset-2 focus:ring-offset-[#231F20]"
+        >
+          ↑
+        </button>
+      )}
     </div>
   );
 }

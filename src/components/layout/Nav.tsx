@@ -15,17 +15,11 @@ export function Nav({ scrolled }: { scrolled: boolean }) {
       }}
     >
       <nav className="flex items-center justify-between px-6 md:px-12 py-4">
-        <a href="#" className="flex flex-col leading-none">
-          {/* <span className="font-display font-900 text-[1.6rem] tracking-tight text-[#F5F3EF] uppercase leading-none">
-            Advantage
-          </span>
-          <span className="font-display font-300 text-[0.85rem] tracking-[0.35em] text-[#D9AD27] uppercase">
-            Air Travel
-          </span> */}
+        <a href="#" className="flex items-center leading-none">
           <img
-            src="/images/logo.png"
-            alt="Advantage Air Travel Logo"
-            className="block w-22 md:w-30 h-auto object-contain"
+            src="/images/cropped-MAIN.png"
+            alt="Advantage Air Travel"
+            className="block h-10 w-32 object-contain md:h-12 md:w-40"
           />
         </a>
         <a href="#contact" className="md:hidden btn-primary text-sm">

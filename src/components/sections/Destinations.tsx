@@ -26,10 +26,10 @@ export function Destinations() {
                 className="font-display font-900 text-[#D9AD27] uppercase"
                 style={{ fontSize: "clamp(2rem, 6vw, 5rem)" }}
               >
-                120+ Destinations
+                10+ Destinations
               </div>
               <div className="font-mono-data text-[0.7rem] tracking-widest text-[#a8a8a8] uppercase mt-2">
-                4 Hubs &nbsp;·&nbsp; 18 Countries &nbsp;·&nbsp; 3 Continents
+                2 Hubs &nbsp;·&nbsp; 10 Countries &nbsp;·&nbsp; 1 Continent
               </div>
             </div>
           </div>
@@ -44,7 +44,7 @@ export function Destinations() {
             </span>
           ))}
           <span className="font-mono-data text-[0.65rem] tracking-widest uppercase px-3 py-2 border border-[#871B1A] text-[#871B1A]">
-            + 102 more
+            more
           </span>
         </div>
       </div>
