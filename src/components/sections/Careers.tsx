@@ -1,14 +1,12 @@
 import { useState } from "react";
 
 import { DEFAULT_JOBS, type Job } from "../../data/siteData";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { Modal, inputClass } from "../ui/Modal";
 
-export function Careers({ adminMode }: { adminMode: boolean }) {
-  const [jobs, setJobs] = useLocalStorage<Job[]>("aat_jobs", DEFAULT_JOBS);
+export function Careers() {
+  const jobs: Job[] = DEFAULT_JOBS;
   const [selected, setSelected] = useState<Job | null>(null);
   const [applyOpen, setApplyOpen] = useState(false);
-  const [addOpen, setAddOpen] = useState(false);
   const [filterDept, setFilterDept] = useState("All");
   const [applyForm, setApplyForm] = useState({
     name: "",
@@ -18,16 +16,6 @@ export function Careers({ adminMode }: { adminMode: boolean }) {
     letter: "",
   });
   const [submitted, setSubmitted] = useState(false);
-  const [newJob, setNewJob] = useState<Omit<Job, "id">>({
-    title: "",
-    department: "Flight Operations",
-    location: "",
-    type: "Full-Time",
-    closing: "",
-    description: "",
-    requirements: [],
-  });
-  const [reqInput, setReqInput] = useState("");
 
   const departments = [
     "All",
@@ -38,27 +26,6 @@ export function Careers({ adminMode }: { adminMode: boolean }) {
       ? jobs
       : jobs.filter((j) => j.department === filterDept);
 
-  const addJob = () => {
-    if (!newJob.title || !newJob.location || !newJob.closing) return;
-    setJobs((prev) => [...prev, { id: Date.now().toString(), ...newJob }]);
-    setNewJob({
-      title: "",
-      department: "Flight Operations",
-      location: "",
-      type: "Full-Time",
-      closing: "",
-      description: "",
-      requirements: [],
-    });
-    setReqInput("");
-    setAddOpen(false);
-  };
-
-  const removeJob = (id: string) => {
-    setJobs((prev) => prev.filter((j) => j.id !== id));
-    if (selected?.id === id) setSelected(null);
-  };
-
   const submitApplication = () => {
     setSubmitted(true);
     setTimeout(() => {
@@ -66,15 +33,6 @@ export function Careers({ adminMode }: { adminMode: boolean }) {
       setSubmitted(false);
       setApplyForm({ name: "", email: "", phone: "", cv: "", letter: "" });
     }, 2500);
-  };
-
-  const addReq = () => {
-    if (!reqInput.trim()) return;
-    setNewJob((p) => ({
-      ...p,
-      requirements: [...p.requirements, reqInput.trim()],
-    }));
-    setReqInput("");
   };
 
   const daysUntilClose = (closing: string) => {
@@ -102,16 +60,6 @@ export function Careers({ adminMode }: { adminMode: boolean }) {
               We recruit aviation professionals who share our commitment to
               safety, precision, and service excellence.
             </p>
-          </div>
-          <div className="flex gap-3 flex-wrap items-center">
-            {adminMode && (
-              <button
-                onClick={() => setAddOpen(true)}
-                className="btn-outline text-xs px-4 py-2"
-              >
-                + Post a Job
-              </button>
-            )}
           </div>
         </div>
 
@@ -162,17 +110,6 @@ export function Careers({ adminMode }: { adminMode: boolean }) {
                     <h3 className="font-display font-700 uppercase text-[#F5F3EF] text-lg leading-tight group-hover:text-[#D9AD27] transition-colors">
                       {job.title}
                     </h3>
-                    {adminMode && (
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          removeJob(job.id);
-                        }}
-                        className="text-[#871B1A] hover:text-[#a82221] text-xl leading-none shrink-0 transition-colors"
-                      >
-                        ×
-                      </button>
-                    )}
                   </div>
                   <div className="font-mono-data text-[0.6rem] tracking-widest uppercase text-[#7C7C7C] mb-3">
                     {job.department}
@@ -346,157 +283,6 @@ export function Careers({ adminMode }: { adminMode: boolean }) {
             </button>
           </div>
         )}
-      </Modal>
-
-      <Modal
-        open={addOpen}
-        onClose={() => setAddOpen(false)}
-        title="Post a New Job"
-      >
-        <div className="flex flex-col gap-4">
-          <div>
-            <label className="section-label mb-2 block">Job Title</label>
-            <input
-              className={inputClass}
-              placeholder="e.g. Captain – ATR 72"
-              value={newJob.title}
-              onChange={(e) =>
-                setNewJob((p) => ({ ...p, title: e.target.value }))
-              }
-            />
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="section-label mb-2 block">Department</label>
-              <select
-                className={inputClass}
-                value={newJob.department}
-                onChange={(e) =>
-                  setNewJob((p) => ({ ...p, department: e.target.value }))
-                }
-                style={{ appearance: "none" }}
-              >
-                {[
-                  "Flight Operations",
-                  "Ground Handling",
-                  "Commercial",
-                  "Maintenance & Engineering",
-                  "Charter & Special Missions",
-                  "HR & Administration",
-                  "Finance",
-                ].map((d) => (
-                  <option key={d}>{d}</option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label className="section-label mb-2 block">
-                Employment Type
-              </label>
-              <select
-                className={inputClass}
-                value={newJob.type}
-                onChange={(e) =>
-                  setNewJob((p) => ({ ...p, type: e.target.value }))
-                }
-                style={{ appearance: "none" }}
-              >
-                {["Full-Time", "Part-Time", "Contract", "Internship"].map(
-                  (t) => (
-                    <option key={t}>{t}</option>
-                  ),
-                )}
-              </select>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="section-label mb-2 block">Location</label>
-              <input
-                className={inputClass}
-                placeholder="e.g. Johannesburg, South Africa"
-                value={newJob.location}
-                onChange={(e) =>
-                  setNewJob((p) => ({ ...p, location: e.target.value }))
-                }
-              />
-            </div>
-            <div>
-              <label className="section-label mb-2 block">Closing Date</label>
-              <input
-                className={inputClass}
-                type="date"
-                value={newJob.closing}
-                onChange={(e) =>
-                  setNewJob((p) => ({ ...p, closing: e.target.value }))
-                }
-              />
-            </div>
-          </div>
-          <div>
-            <label className="section-label mb-2 block">Job Description</label>
-            <textarea
-              className={inputClass}
-              rows={3}
-              placeholder="Describe the role and responsibilities…"
-              value={newJob.description}
-              onChange={(e) =>
-                setNewJob((p) => ({ ...p, description: e.target.value }))
-              }
-            />
-          </div>
-          <div>
-            <label className="section-label mb-2 block">Requirements</label>
-            <div className="flex gap-2 mb-2">
-              <input
-                className={inputClass}
-                placeholder="Add a requirement and press +"
-                value={reqInput}
-                onChange={(e) => setReqInput(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    e.preventDefault();
-                    addReq();
-                  }
-                }}
-              />
-              <button
-                onClick={addReq}
-                className="btn-outline text-xs px-4 shrink-0"
-              >
-                +
-              </button>
-            </div>
-            {newJob.requirements.length > 0 && (
-              <ul className="flex flex-col gap-1 mt-2">
-                {newJob.requirements.map((r, i) => (
-                  <li
-                    key={i}
-                    className="flex items-center justify-between text-xs text-[#a8a8a8] border border-[rgba(217,173,39,0.1)] px-3 py-2"
-                  >
-                    {r}
-                    <button
-                      onClick={() =>
-                        setNewJob((p) => ({
-                          ...p,
-                          requirements: p.requirements.filter(
-                            (_, j) => j !== i,
-                          ),
-                        }))
-                      }
-                      className="text-[#871B1A] ml-3 hover:text-[#a82221]"
-                    >
-                      ×
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-          <button onClick={addJob} className="btn-primary text-sm self-start">
-            Publish Job Listing
-          </button>
-        </div>
       </Modal>
     </section>
   );

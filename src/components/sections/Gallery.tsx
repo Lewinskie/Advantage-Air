@@ -5,35 +5,14 @@ import {
   GALLERY_CATEGORIES,
   type GalleryPhoto,
 } from "../../data/siteData";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
-import { Modal, inputClass } from "../ui/Modal";
 
-export function Gallery({ adminMode }: { adminMode: boolean }) {
-  const [photos, setPhotos] = useLocalStorage<GalleryPhoto[]>(
-    "aat_gallery",
-    DEFAULT_PHOTOS,
-  );
+export function Gallery() {
+  const photos = DEFAULT_PHOTOS;
   const [filter, setFilter] = useState("All");
   const [lightbox, setLightbox] = useState<GalleryPhoto | null>(null);
-  const [addOpen, setAddOpen] = useState(false);
-  const [newPhoto, setNewPhoto] = useState({
-    url: "",
-    caption: "",
-    category: "Cargo Ops",
-  });
 
   const visible =
     filter === "All" ? photos : photos.filter((p) => p.category === filter);
-
-  const addPhoto = () => {
-    if (!newPhoto.url || !newPhoto.caption) return;
-    setPhotos((prev) => [...prev, { id: Date.now().toString(), ...newPhoto }]);
-    setNewPhoto({ url: "", caption: "", category: "Cargo Ops" });
-    setAddOpen(false);
-  };
-
-  const removePhoto = (id: string) =>
-    setPhotos((prev) => prev.filter((p) => p.id !== id));
 
   return (
     <section id="gallery" className="bg-[#231F20] py-24 px-6 md:px-12">
@@ -51,16 +30,6 @@ export function Gallery({ adminMode }: { adminMode: boolean }) {
               <br />
               In the Air
             </h2>
-          </div>
-          <div className="flex items-center gap-3 flex-wrap">
-            {adminMode && (
-              <button
-                onClick={() => setAddOpen(true)}
-                className="btn-outline text-xs px-4 py-2"
-              >
-                + Add Photo
-              </button>
-            )}
           </div>
         </div>
 
@@ -104,17 +73,6 @@ export function Gallery({ adminMode }: { adminMode: boolean }) {
                   {photo.caption}
                 </div>
               </div>
-              {adminMode && (
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    removePhoto(photo.id);
-                  }}
-                  className="absolute top-2 right-2 bg-[#871B1A] text-white w-6 h-6 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity z-10 hover:bg-[#6a1514]"
-                >
-                  ×
-                </button>
-              )}
             </div>
           ))}
         </div>
@@ -148,59 +106,6 @@ export function Gallery({ adminMode }: { adminMode: boolean }) {
           </div>
         </div>
       )}
-
-      <Modal open={addOpen} onClose={() => setAddOpen(false)} title="Add Photo">
-        <div className="flex flex-col gap-4">
-          <div>
-            <label className="section-label mb-2 block">Photo URL</label>
-            <input
-              className={inputClass}
-              placeholder="https://images.unsplash.com/…"
-              value={newPhoto.url}
-              onChange={(e) =>
-                setNewPhoto((p) => ({ ...p, url: e.target.value }))
-              }
-            />
-          </div>
-          <div>
-            <label className="section-label mb-2 block">Caption</label>
-            <input
-              className={inputClass}
-              placeholder="Describe the photo…"
-              value={newPhoto.caption}
-              onChange={(e) =>
-                setNewPhoto((p) => ({ ...p, caption: e.target.value }))
-              }
-            />
-          </div>
-          <div>
-            <label className="section-label mb-2 block">Category</label>
-            <select
-              className={inputClass}
-              value={newPhoto.category}
-              onChange={(e) =>
-                setNewPhoto((p) => ({ ...p, category: e.target.value }))
-              }
-              style={{ appearance: "none" }}
-            >
-              {GALLERY_CATEGORIES.filter((c) => c !== "All").map((c) => (
-                <option key={c}>{c}</option>
-              ))}
-            </select>
-          </div>
-          {newPhoto.url && (
-            <img
-              src={newPhoto.url}
-              alt="Preview"
-              className="w-full h-40 object-cover border border-[rgba(217,173,39,0.2)]"
-              onError={() => {}}
-            />
-          )}
-          <button onClick={addPhoto} className="btn-primary text-sm self-start">
-            Add to Gallery
-          </button>
-        </div>
-      </Modal>
     </section>
   );
 }

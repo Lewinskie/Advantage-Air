@@ -18,7 +18,6 @@ import { VisionMission } from "./components/sections/VisionMission";
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [adminMode, setAdminMode] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -39,15 +38,12 @@ export default function App() {
       {/* <Stats /> */}
       <Fleet />
       <Services />
-      <Gallery adminMode={adminMode} />
+      <Gallery />
       {/* <Destinations /> */}
       <CTA />
-      <Careers adminMode={adminMode} />
+      <Careers />
       <Contact />
-      <Footer
-        adminMode={adminMode}
-        onAdminToggle={() => setAdminMode((v) => !v)}
-      />
+      <Footer />
       {showScrollTop && (
         <button
           type="button"

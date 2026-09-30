@@ -9,6 +9,7 @@ export interface Job {
   requirements: string[];
 }
 
+// Add gallery photos here; place local image files in public/images first.
 export interface GalleryPhoto {
   id: string;
   url: string;
@@ -185,6 +186,12 @@ export const FLEET = [
     range: "5,765 km",
     img: "/images/2-1.jpg",
     alt: "Fokker 50 on tarmac",
+    // Add image paths here to include photos in this aircraft's slideshow.
+    photos: [
+      "/images/2-1.jpg",
+      "/images/WhatsApp-Image-2022-01-19-at-11.54.28-9.jpeg",
+      "/images/WhatsApp-Image-2022-01-18-at-14.02.10-3.jpeg",
+    ],
   },
   {
     name: "ATR 72-400 Freighter",
@@ -193,9 +200,17 @@ export const FLEET = [
     range: "1,528 km",
     img: "/images/5Y-DDI.jpg",
     alt: "ATR 72-400 parked at airport",
+    photos: [
+      "/images/5Y-DDI.jpg",
+      "/images/5Y-DDI-2.jpg",
+      "/images/5Y-DDI-3.jpg",
+      "/images/5Y-DDI-4.jpg",
+      "/images/5Y-DDI-5.jpg",
+    ],
   },
 ];
 
+// Add gallery photos here; place local image files in public/images first.
 export const SERVICES = [
   {
     num: "01",

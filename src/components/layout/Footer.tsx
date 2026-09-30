@@ -1,33 +1,9 @@
-import { useState } from "react";
-
-export function Footer({
-  onAdminToggle,
-  adminMode,
-}: {
-  onAdminToggle: () => void;
-  adminMode: boolean;
-}) {
-  const [clickCount, setClickCount] = useState(0);
-
-  const handleLogoClick = () => {
-    setClickCount((c) => {
-      const next = c + 1;
-      if (next >= 5) {
-        onAdminToggle();
-        return 0;
-      }
-      return next;
-    });
-  };
-
+export function Footer() {
   return (
     <footer className="bg-[#231F20] border-t border-[rgba(217,173,39,0.12)] py-12 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-10 mb-12">
         <div className="md:col-span-1">
-          <button
-            onClick={handleLogoClick}
-            className="mb-4 flex items-center gap-3 text-left"
-          >
+          <div className="mb-4 flex items-center gap-3 text-left">
             <img
               src="/images/cropped-Favicon-01-01-1.png"
               alt=""
@@ -41,16 +17,11 @@ export function Footer({
                 Air Travel
               </span>
             </span>
-          </button>
+          </div>
           <p className="text-[#7C7C7C] text-xs leading-relaxed">
             Africa's trusted air carrier since 1996. Scheduled, charter, cargo,
             and aeromedical services.
           </p>
-          {adminMode && (
-            <div className="mt-3 font-mono-data text-[0.55rem] tracking-widest uppercase text-[#871B1A] border border-[#871B1A] px-2 py-1 inline-block">
-              Admin Mode Active
-            </div>
-          )}
         </div>
         {[
           {
